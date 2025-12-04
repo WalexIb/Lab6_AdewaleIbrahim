@@ -1,10 +1,12 @@
 package com.ai.lab6.week13;
 
+// LottoGenerator class to generate lotto numbers
 import java.security.SecureRandom;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+// LottoGenerator class to generate lotto numbers
 public class LottoGenerator {
 
     private static final int COUNT = 6;
@@ -21,7 +23,7 @@ public class LottoGenerator {
         for (int i = MIN; i <= MAX; i++) {
             availableNumbers.add(i);
         }
-
+// Shuffle the list to ensure randomness
         Collections.shuffle(availableNumbers, secureRandom);
 
         List<Integer> selectedNumbers = new ArrayList<>();
@@ -29,6 +31,7 @@ public class LottoGenerator {
             selectedNumbers.add(availableNumbers.get(i));
         }
         
+        // Sort the selected numbers before returning
         Collections.sort(selectedNumbers);
         return selectedNumbers;
     }
